@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Login Page</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="AFin Secure Logo" class="logo-img">
+      <h1>AFin Secure</h1>
+    </div>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="create.html">Create Account</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="login">
+      <h2>Login to Your Account</h2>
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="security-question">Security Question:</label>
+        <select id="security-question" name="security-question" autocomplete="off" required>
+          <option value="pet-name">What is the name of your first pet?</option>
+          <option value="mother-maiden-name">What is your mother's maiden name?</option>
+          <option value="first-school">What was the name of your first school?</option>
+        </select>
+        
+        <label for="security-answer">Answer:</label>
+        <input type="text" id="security-answer" name="security-answer" autocomplete="off" required>
+        
+        <div class="remember-me">
+          <input type="checkbox" id="remember-me" name="remember-me">
+          <label for="remember-me">Remember Me</label>
+        </div>
+        
+        <button type="submit" id="lets-go" aria-label="Login">Login</button>
+      </form>
+      <p class="forgot-password">
+        <a href="forgetpw.html" class="forgot-password-link">Forgot Password?</a>
+    </p>    
+      <div class="social-login">
+        <p>Or login with:</p>
+        <img src="img1.jpg" alt="Google" class="social-logo" id="google-login">
+        <img src="img2.png" alt="Facebook" class="social-logo" id="facebook-login">
+      </div>
+      <p class="signup-prompt">Don't have an account? <a href="create.html" class="signup-link">Create Account</a></p>
+      <p class="help-prompt"><a href="#" class="help-link">Need help?</a></p>
+    </section>
+  </main>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      window.location.href = "service.html";
+    });
+  </script>
+</body>
+</html>

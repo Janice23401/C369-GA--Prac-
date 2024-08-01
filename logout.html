@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logging Out</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to your external stylesheet -->
+  <style>
+    /* General styling for the logout page */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .logout {
+      margin-top: 2rem;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AFin Secure</h1>
+  </header>
+  <main>
+    <section class="logout">
+      <h2>Logging Out</h2>
+      <p>You are being logged out. Please wait...</p>
+    </section>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  
+      localStorage.removeItem('userToken'); 
+      sessionStorage.removeItem('userSession'); 
+
+      setTimeout(function() {
+        window.location.href = 'login.html'; 
+      }, 2000); 
+    });
+  </script>
+</body>
+</html>

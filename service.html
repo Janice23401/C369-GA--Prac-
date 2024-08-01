@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="digital_wallet.js" defer></script>
+</head>
+<body>
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="AFin Secure Logo" class="logo-img">
+        <h1>AFin Secure</h1>
+      </div>
+        <nav>
+            <ul class="nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+              <li class="nav-item"><a class="nav-link" href="digital_wallet.html">Online Payment</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="insurance" class="insurance-section">
+            <h1>Insurance Services</h1>           
+            <div class="service">
+                <h2>Life Insurance</h2>
+                <p>Protect your loved ones with our comprehensive life insurance plans.</p>
+                <div class="plans">
+                    <div class="plan">
+                        <h3>Basic Plan</h3>
+                        <p>Coverage: $100,000</p>
+                        <p>Monthly Premium: $50</p>
+                        <ul>
+                            <li>Basic life insurance coverage for policyholder.</li>
+                            <li>Financial support for the family in case of the policyholder's death.</li>
+                            <li>Simple and affordable plan with essential coverage.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="life" data-plan="basic">Choose Plan</button>
+                    </div>
+                    <div class="plan">
+                        <h3>Standard Plan</h3>
+                        <p>Coverage: $250,000</p>
+                        <p>Monthly Premium: $100</p>
+                        <ul>
+                            <li>All benefits of the Basic Plan.</li>
+                            <li>Additional coverage for critical illness.</li>
+                            <li>Cash value accumulation with potential for loans.</li>
+                            <li>Coverage for accidental death and dismemberment.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="life" data-plan="standard">Choose Plan</button>
+                    </div>
+                    <div class="plan">
+                        <h3>Premium Plan</h3>
+                        <p>Coverage: $500,000</p>
+                        <p>Monthly Premium: $200</p>
+                        <ul>
+                            <li>All benefits of the Standard Plan.</li>
+                            <li>Higher coverage amount.</li>
+                            <li>Enhanced cash value accumulation.</li>
+                            <li>Premium waiver benefit in case of disability.</li>
+                            <li>Optional riders for additional protection.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="life" data-plan="premium">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service">
+                <h2>Health Insurance</h2>
+                <p>Ensure your health and wellbeing with our health insurance coverage.</p>
+                <div class="plans">
+                    <div class="plan">
+                        <h3>Basic Plan</h3>
+                        <p>Coverage: $50,000</p>
+                        <p>Monthly Premium: $100</p>
+                        <ul>
+                            <li>Basic health coverage for hospitalization and treatment.</li>
+                            <li>Affordable premiums with essential health benefits.</li>
+                            <li>Network access to general hospitals and clinics.</li>
+                            <li>Coverage for common medical conditions and emergencies.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="health" data-plan="basic">Choose Plan</button>
+                    </div>
+                    <div class="plan">
+                        <h3>Standard Plan</h3>
+                        <p>Coverage: $100,000</p>
+                        <p>Monthly Premium: $200</p>
+                        <ul>
+                            <li>All benefits of the Basic Plan.</li>
+                            <li>Coverage for specialist consultations and treatments.</li>
+                            <li>Outpatient care and prescription drug coverage.</li>
+                            <li>Wellness programs and preventive care benefits.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="health" data-plan="standard">Choose Plan</button>
+                    </div>
+                    <div class="plan">
+                        <h3>Premium Plan</h3>
+                        <p>Coverage: $200,000</p>
+                        <p>Monthly Premium: $300</p>
+                        <ul>
+                            <li>All benefits of the Standard Plan.</li>
+                            <li>Higher coverage for hospitalization and critical care.</li>
+                            <li>Access to top-tier hospitals and specialists.</li>
+                            <li>Coverage for international medical treatment.</li>
+                            <li>Comprehensive wellness and preventive care programs.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="health" data-plan="premium">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service">
+                <h2>Car Insurance</h2>
+                <p>Get the best car insurance plans to protect your vehicle.</p>
+                <div class="plans">
+                    <div class="plan">
+                        <h3>Basic Plan</h3>
+                        <p>Coverage: $10,000</p>
+                        <p>Monthly Premium: $50</p>
+                        <ul>
+                            <li>Basic car insurance coverage for third-party liability.</li>
+                            <li>Affordable premiums for essential coverage.</li>
+                            <li>Coverage for property damage and bodily injury.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="car" data-plan="basic">Choose Plan</button>
+                    </div>
+                    <div class="plan">
+                        <h3>Standard Plan</h3>
+                        <p>Coverage: $25,000</p>
+                        <p>Monthly Premium: $80</p>
+                        <ul>
+                            <li>All benefits of the Basic Plan.</li>
+                            <li>Additional coverage for own vehicle damage.</li>
+                            <li>Coverage for theft and fire incidents.</li>
+                            <li>Roadside assistance services.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="car" data-plan="standard">Choose Plan</button>
+                    </div>
+                    <div class="plan">
+                        <h3>Premium Plan</h3>
+                        <p>Coverage: $50,000</p>
+                        <p>Monthly Premium: $150</p>
+                        <ul>
+                            <li>All benefits of the Standard Plan.</li>
+                            <li>Higher vehicle damage coverage.</li>
+                            <li>Comprehensive roadside assistance.</li>
+                        </ul>
+                        <button class="choose-plan" data-category="car" data-plan="premium">Choose Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>

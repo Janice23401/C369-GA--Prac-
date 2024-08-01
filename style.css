@@ -1,0 +1,361 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: grey;
+  color: white;
+  padding: 1rem;
+}
+
+.carousel {
+  max-height: 300px; 
+  }
+
+  .carousel-item img {
+      width: 100%; 
+      height: auto; 
+      max-height: 300px; 
+      object-fit: contain; 
+  }
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  padding: 2rem;
+}
+
+.intro {
+  text-align: center;
+  padding: 2rem;
+}
+
+.insurance-intro, .ai-enhanced, .blockchain-enhanced {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.insurance-intro h2, .ai-enhanced h2, .blockchain-enhanced h2 {
+  color: violet;
+}
+
+.insurance-intro button, .ai-enhanced button, .blockchain-enhanced button {
+  background-color: purple;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.service {
+  margin: 2rem 0;
+}
+
+.service h2 {
+  color: #333;
+}
+
+.insurance-section {
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.insurance-section h1 {
+  color: purple;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.plan {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.plan h3 {
+  margin: 0.5rem 0;
+  color: #007BFF;
+}
+main {
+  padding: 20px;
+}
+
+
+.create-account {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-account h2 {
+  margin-top: 0;
+}
+
+.create-account form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-account form label {
+  margin: 10px 0 5px;
+}
+
+.create-account form input,
+.create-account form select {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-account form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-account form button:hover {
+  background-color: #0056b3;
+}
+
+.social-signup {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-signup p {
+  margin: 0;
+}
+
+.social-logo {
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link {
+  color: red;
+  text-decoration: underline;
+}
+
+.help-prompt {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.help-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+.login {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login h2 {
+  margin-top: 0;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login form label {
+  margin: 10px 0 5px;
+}
+
+.login form input,
+.login form select {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login form button:hover {
+  background-color: #0056b3;
+}
+
+.remember-me {
+  margin-bottom: 10px;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password-link {
+  color: red;
+  text-decoration: underline;
+}
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-login p {
+  margin: 0;
+}
+
+.social-logo {
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.signup-prompt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.help-prompt {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.help-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+.welcome {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.welcome h2 {
+  margin-top: 0;
+}
+
+.how-it-works {
+  margin-top: 20px;
+}
+
+.how-it-works h3 {
+  margin-bottom: 15px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.step-card h4 {
+  margin-top: 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: purple;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: violet;
+}
+
