@@ -1,26 +1,17 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
 header {
   background-color: grey;
   color: white;
   padding: 1rem;
+  text-align: center;
 }
-
-.carousel {
-  max-height: 300px; 
-  }
-
-  .carousel-item img {
-      width: 100%; 
-      height: auto; 
-      max-height: 300px; 
-      object-fit: contain; 
-  }
-
 
 .logo {
   display: flex;
@@ -33,9 +24,9 @@ header {
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin: 0;
+  text-align: center;
 }
 
 .nav-item {
@@ -52,11 +43,32 @@ nav ul {
   font-weight: bold;
 }
 
-.main {
-  display: flex;
-  padding: 2rem;
+.nav ul li {
+  display: inline;
+  margin: 0 10px;
 }
 
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.carousel {
+  max-height: 300px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Intro and Sections */
 .intro {
   text-align: center;
   padding: 2rem;
@@ -73,15 +85,21 @@ nav ul {
   color: violet;
 }
 
-.insurance-intro button, .ai-enhanced button, .blockchain-enhanced button {
+.insurance-intro button, .ai-enhanced button, .blockchain-enhanced button, button {
   background-color: purple;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
+  margin-top: 20px;
 }
 
+button:hover {
+  background-color: violet;
+}
+
+/* Service Section */
 .service {
   margin: 2rem 0;
 }
@@ -122,40 +140,36 @@ nav ul {
   margin: 0.5rem 0;
   color: #007BFF;
 }
-main {
-  padding: 20px;
-}
 
-
-.create-account {
+/* Account Creation and Login */
+.create-account, .login, .welcome {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.create-account h2 {
+.create-account h2, .login h2, .welcome h2 {
   margin-top: 0;
 }
 
-.create-account form {
+.create-account form, .login form {
   display: flex;
   flex-direction: column;
 }
 
-.create-account form label {
+.create-account form label, .login form label {
   margin: 10px 0 5px;
 }
 
-.create-account form input,
-.create-account form select {
+.create-account form input, .login form input, .create-account form select, .login form select {
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.create-account form button {
+.create-account form button, .login form button {
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -164,16 +178,16 @@ main {
   cursor: pointer;
 }
 
-.create-account form button:hover {
+.create-account form button:hover, .login form button:hover {
   background-color: #0056b3;
 }
 
-.social-signup {
+.social-signup, .social-login {
   text-align: center;
   margin-top: 20px;
 }
 
-.social-signup p {
+.social-signup p, .social-login p {
   margin: 0;
 }
 
@@ -183,12 +197,12 @@ main {
   cursor: pointer;
 }
 
-.login-prompt {
+.login-prompt, .signup-prompt {
   text-align: center;
   margin-top: 20px;
 }
 
-.login-link {
+.login-link, .signup-link {
   color: red;
   text-decoration: underline;
 }
@@ -205,47 +219,6 @@ main {
 
 .help-link:hover {
   text-decoration: underline;
-}
-
-.login {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login h2 {
-  margin-top: 0;
-}
-
-.login form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login form label {
-  margin: 10px 0 5px;
-}
-
-.login form input,
-.login form select {
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.login form button {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login form button:hover {
-  background-color: #0056b3;
 }
 
 .remember-me {
@@ -262,61 +235,7 @@ main {
   text-decoration: underline;
 }
 
-.social-login {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.social-login p {
-  margin: 0;
-}
-
-.social-logo {
-  height: 30px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.signup-prompt {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.signup-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.signup-link:hover {
-  text-decoration: underline;
-}
-
-.help-prompt {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.help-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.help-link:hover {
-  text-decoration: underline;
-}
-
-.welcome {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.welcome h2 {
-  margin-top: 0;
-}
-
+/* Welcome Section */
 .how-it-works {
   margin-top: 20px;
 }
@@ -345,17 +264,61 @@ main {
   margin-top: 0;
 }
 
-button {
-  padding: 10px 20px;
+form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 400px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button[type="submit"] {
   background-color: purple;
   color: #fff;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
 }
 
-button:hover {
+button[type="submit"]:hover {
   background-color: violet;
 }
 
+#successMessage {
+  display: block; /* Should be overridden by JavaScript */
+  background-color: yellow; /* Temporary background color for visibility */
+  color: black; /* Temporary text color for visibility */
+  padding: 10px; /* Temporary padding for visibility */
+  border: 1px solid black; /* Temporary border for visibility */
+}
+
+
+footer {
+  background-color: grey;
+  color: #fff;
+  padding: 2px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

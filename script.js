@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Handle plan selection
     const planButtons = document.querySelectorAll(".choose-plan");
     planButtons.forEach(button => {
         button.addEventListener("click", () => {
