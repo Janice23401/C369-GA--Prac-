@@ -1,11 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Wallet - AFin Secure</title>
-  <link rel="stylesheet" href="digital_wallet.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: grey;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header .logo-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul.nav {
+      display: inline;
+    }
+
+    .nav-item {
+      display: inline;
+      margin-right: 1rem;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    #wallet {
+      background-color: #f8f9fa;
+      color: #212529;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    #wallet h1 {
+      color: black;
+    }
+
+    #wallet-balance,
+    #make-payment,
+    #transaction-status,
+    #transaction-history,
+    #transaction-flow {
+      margin: 2rem 0;
+    }
+
+    #wallet-balance p,
+    #transaction-status p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: purple;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: violet;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label,
+    form input,
+    form button {
+      margin: 0.5rem 0;
+    }
+
+    #transaction-history ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #transaction-history li {
+      margin: 0.5rem 0;
+      background-color: #e9ecef;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: grey;
+      color: white;
+      text-align: center;
+      padding: 0rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -32,17 +169,27 @@
       <h3>Available Balance: $<span id="balance">0.00</span></h3>
       <button onclick="showTopUpForm()">Top Up</button>
       <form id="top-up-form" class="top-up-form" onsubmit="processTopUp(event)" style="display: none;">
-     <label for="card-number">Card Number:</label>
+        <label for="card-number">Card Number:</label>
         <input type="text" id="card-number" required><br>
         <label for="cvv">CVV:</label>
         <input type="text" id="cvv" required><br>
         <label for="expiry-date">Expiry Date:</label>
         <input type="date" id="expiry-date" required><br>
-        </div>
-
         <button type="submit">Submit</button>
       </form>
-
+      <div id="payment-section" style="display: none;">
+        <h2>Payment Details</h2>
+        <form id="payment-form">
+          <label for="phone-number">Phone Number:</label>
+          <input type="text" id="phone-number" name="phone-number" required>
+          <button type="button" id="send-otp">Send OTP</button>
+          <div id="otp-section" style="display: none;">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+            <button type="submit">Verify & Pay</button>
+          </div>
+        </form>
+      </div>
       <form onsubmit="makePayment(event)">
         <label for="amount">Amount:</label>
         <input type="number" id="amount" step="0.01" min="0" required><br>
@@ -56,6 +203,116 @@
   <footer>
     <p>&copy; 2024 Your Company. All rights reserved.</p>
   </footer>
-  <script src="digital_wallet.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let balance = 0.00;
+      let history = [];
+
+      function updateBalance() {
+        document.getElementById("balance").innerText = balance.toFixed(2);
+      }
+
+      function updateHistory() {
+        const historyList = document.getElementById("history");
+        historyList.innerHTML = "";
+        history.forEach(transaction => {
+          const li = document.createElement("li");
+          li.textContent = `${transaction.type}: $${transaction.amount.toFixed(2)} on ${transaction.date}`;
+          historyList.appendChild(li);
+        });
+      }
+
+      window.showTopUpForm = function() {
+        document.getElementById("top-up-form").style.display = "block";
+      }
+
+      window.processTopUp = function(event) {
+        event.preventDefault();
+
+        const cardNumber = document.getElementById("card-number").value;
+        const cvv = document.getElementById("cvv").value;
+        const expiryDate = document.getElementById("expiry-date").value;
+
+        if (!cardNumber || !cvv || !expiryDate) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        const amount = parseFloat(prompt("Enter top-up amount:"));
+        if (isNaN(amount) || amount <= 0) {
+          alert("Invalid amount. Please try again.");
+          return;
+        }
+
+        balance += amount;
+        history.push({ type: "Top Up", amount, date: new Date().toLocaleString() });
+        updateBalance();
+        updateHistory();
+        document.getElementById("top-up-form").style.display = "none";
+      }
+
+      window.makePayment = function(event) {
+        event.preventDefault();
+        const amount = parseFloat(document.getElementById("amount").value);
+        const planPrice = parseFloat(document.getElementById("plan-price").textContent.replace('The cost of this plan is $', ''));
+
+        if (isNaN(amount) || amount <= 0) {
+          alert("Invalid amount. Please try again.");
+          return;
+        }
+        if (amount > balance) {
+          alert("Insufficient balance. Please top up.");
+          return;
+        }
+        if (amount !== planPrice) {
+          alert(`The payment amount must be exactly $${planPrice.toFixed(2)}.`);
+          return;
+        }
+
+        balance -= amount;
+        history.push({ type: "Payment", amount, date: new Date().toLocaleString() });
+        updateBalance();
+        updateHistory();
+        document.getElementById("status").innerText = `Paid $${amount.toFixed(2)} successfully.`;
+      }
+
+      // Plan cost logic
+      const planCosts = {
+        life: {
+          basic: 50,
+          standard: 100,
+          premium: 200,
+        },
+        health: {
+          basic: 100,
+          standard: 200,
+          premium: 400,
+        },
+        car: {
+          basic: 50,
+          standard: 80,
+          premium: 150,
+        }
+      };
+
+      function getPlanCost(type, plan) {
+        return planCosts[type] && planCosts[type][plan] || 0;
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const planType = urlParams.get('type');
+      const planName = urlParams.get('plan');
+
+      const planDescription = `You have selected ${planType} insurance, ${planName} plan.`;
+      const planPrice = `The cost of this plan is $${getPlanCost(planType, planName)}.`;
+
+      document.getElementById("plan-description").textContent = planDescription;
+      document.getElementById("plan-price").textContent = planPrice;
+
+      updateBalance();
+      updateHistory();
+    });
+  </script>
 </body>
+
 </html>

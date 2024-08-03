@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: grey;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header .logo-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .login {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .login h2 {
+      margin-top: 0;
+    }
+
+    .login form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login form label {
+      margin: 10px 0 5px;
+    }
+
+    .login form input {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login form button {
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login form button:hover {
+      background-color: #0056b3;
+    }
+
+    .singpass-qr {
+      margin-top: 20px;
+    }
+
+    .singpass-qr img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .help-link {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .help-link:hover {
+      text-decoration: underline;
+    }
+
+    .generate-button {
+      margin-left: 10px;
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    .generate-button:hover {
+      background-color: #218838;
+    }
+  </style>
+  <title>SingPass Login</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="AFin Secure Logo" class="logo-img">
+      <h1>AFin Secure</h1>
+    </div>
+  </header>
+  <main>
+    <section class="login">
+      <h2>SingPass Login</h2>
+      <p>Scan the QR code with your SingPass app.</p>
+      <div class="singpass-qr">
+        <img src="singpass.png" alt="SingPass QR Code">
+      </div>
+      <form id="twofa-form">
+        <label for="twofa-code">Enter 2FA Code:</label>
+        <div style="display: flex; align-items: center;">
+          <input type="text" id="twofa-code" name="twofa-code" required>
+          <button type="button" id="generate-code" class="generate-button">Generate</button>
+        </div>
+        <button type="submit">Verify Code</button>
+      </form>
+      <p><a href="#" class="help-link">Need help?</a></p>
+    </section>
+  </main>
+  <script>
+    let generatedCode = '';
+
+    function generateRandomCode() {
+      return Math.floor(1000 + Math.random() * 9000).toString();
+    }
+
+    document.getElementById('generate-code').addEventListener('click', function() {
+      generatedCode = generateRandomCode();
+      alert(`Generated Code: ${generatedCode}`);
+    });
+
+    document.getElementById('twofa-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const enteredCode = document.getElementById('twofa-code').value;
+      
+      if (enteredCode === generatedCode) {
+        alert("2FA Code Verified!");
+        window.location.href = "service.html";
+      } else {
+        alert("Invalid 2FA Code. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

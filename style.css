@@ -4,29 +4,41 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  box-sizing: border-box;
 }
 
 header {
   background-color: grey;
   color: white;
-  padding: 1rem;
+  padding: 1rem 0;
   text-align: center;
 }
 
-.logo {
+header .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.logo-img {
+header .logo-img {
+  width: 50px;
   height: 50px;
-  margin-right: 1rem;
+  margin-right: 10px;
+}
+
+header h1 {
+  margin: 0;
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
+  margin: 0;
   text-align: center;
+}
+
+nav ul.nav {
+  display: inline;
 }
 
 .nav-item {
@@ -43,15 +55,20 @@ nav ul {
   font-weight: bold;
 }
 
-.nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
-
-.nav ul li a:hover {
+nav ul li a:hover {
   text-decoration: underline;
 }
 
+main {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Carousel */
 .carousel {
   max-height: 300px;
 }
@@ -63,11 +80,6 @@ nav ul {
   object-fit: contain;
 }
 
-main {
-  padding: 20px;
-  text-align: center;
-}
-
 /* Intro and Sections */
 .intro {
   text-align: center;
@@ -77,15 +89,16 @@ main {
 .insurance-intro, .ai-enhanced, .blockchain-enhanced {
   background-color: #f8f9fa;
   padding: 2rem;
-  text-align: center;
   margin-top: 2rem;
+  text-align: center;
 }
 
 .insurance-intro h2, .ai-enhanced h2, .blockchain-enhanced h2 {
   color: violet;
 }
 
-.insurance-intro button, .ai-enhanced button, .blockchain-enhanced button, button {
+/* Buttons */
+button {
   background-color: purple;
   color: white;
   padding: 0.5rem 1rem;
@@ -202,7 +215,7 @@ button:hover {
   margin-top: 20px;
 }
 
-.login-link, .signup-link {
+.login-link, .signup-link, .forgot-password-link {
   color: red;
   text-decoration: underline;
 }
@@ -228,11 +241,6 @@ button:hover {
 .forgot-password {
   text-align: center;
   margin-top: 10px;
-}
-
-.forgot-password-link {
-  color: red;
-  text-decoration: underline;
 }
 
 /* Welcome Section */
@@ -264,6 +272,7 @@ button:hover {
   margin-top: 0;
 }
 
+/* Forms */
 form {
   background-color: #fff;
   border-radius: 5px;
@@ -304,21 +313,96 @@ button[type="submit"]:hover {
   background-color: violet;
 }
 
+/* Success Message */
 #successMessage {
-  display: block; /* Should be overridden by JavaScript */
+  display: block;
   background-color: yellow; /* Temporary background color for visibility */
   color: black; /* Temporary text color for visibility */
   padding: 10px; /* Temporary padding for visibility */
   border: 1px solid black; /* Temporary border for visibility */
 }
 
+/* Wallet Section */
+#wallet {
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 2rem;
+  border-radius: 8px;
+}
 
+#wallet h1 {
+  color: black;
+}
+
+#wallet-balance, #make-payment, #transaction-status, #transaction-history, #transaction-flow {
+  margin: 2rem 0;
+}
+
+#wallet-balance p, #transaction-status p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#transaction-history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#transaction-history li {
+  margin: 0.5rem 0;
+  background-color: #e9ecef;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+}
+
+.card h2, .card p {
+  margin: 10px 0;
+}
+
+/* Advisor Image */
+.advisor-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Footer */
 footer {
   background-color: grey;
-  color: #fff;
-  padding: 2px 0;
+  color: white;
   text-align: center;
+  padding: 10px 0;
   position: fixed;
-  bottom: 0;
   width: 100%;
+  bottom: 0;
+}
+
+i.fas.fa-user {
+  margin-right: 10px;
+  color: #333;
+  font-size: 1.2em;
 }

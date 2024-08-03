@@ -1,24 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome - AFin Secure</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: grey;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header .logo-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-item {
+
+      margin-right: 1rem;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+    }
+
     .carousel {
       max-height: 300px;
     }
 
     .carousel-inner img {
-      width: 100%; 
-      height: auto; 
+      width: 100%;
+      height: auto;
       max-height: 300px;
-      object-fit: contain; 
+      object-fit: contain;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .insurance-intro,
+    .ai-enhanced,
+    .blockchain-enhanced {
+      background-color: #f8f9fa;
+      padding: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .insurance-intro h2,
+    .ai-enhanced h2,
+    .blockchain-enhanced h2 {
+      color: violet;
+    }
+
+    button {
+      background-color: purple;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: violet;
+    }
+
+    .how-it-works {
+      margin-top: 20px;
+    }
+
+    .how-it-works h3 {
+      margin-bottom: 15px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .step-card {
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .step-card h4 {
+      margin-top: 0;
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -85,30 +215,42 @@
     </section>
     <section class="insurance-intro">
       <h2>Explore Our Insurance Plans</h2>
-      <p>Insurance is a crucial financial product that provides protection against unforeseen events and helps secure your future. Our range of insurance plans is designed to meet diverse needs and offer peace of mind.</p>
+      <p>Insurance is a crucial financial product that provides protection against unforeseen events and helps secure
+        your future. Our range of insurance plans is designed to meet diverse needs and offer peace of mind.</p>
       <ul>
-        <li><strong>Life Insurance:</strong> Provides financial support to your loved ones in case of unexpected events.</li>
-        <li><strong>Health Insurance:</strong> Covers medical expenses and offers financial protection for healthcare needs.</li>
-        <li><strong>Car Insurance:</strong> Protects you against risks associated with driving and owning a vehicle.</li>
+        <li><strong>Life Insurance:</strong> Provides financial support to your loved ones in case of unexpected events.
+        </li>
+        <li><strong>Health Insurance:</strong> Covers medical expenses and offers financial protection for healthcare
+          needs.</li>
+        <li><strong>Car Insurance:</strong> Protects you against risks associated with driving and owning a vehicle.
+        </li>
       </ul>
       <button onclick="location.href='login.html'">Learn More About Our Plans</button>
     </section>
     <section class="ai-enhanced">
       <h2>AI-Enhanced Insurance</h2>
-      <p>Our insurance services leverage artificial intelligence to offer smarter, more efficient solutions tailored to your needs.</p>
+      <p>Our insurance services leverage artificial intelligence to offer smarter, more efficient solutions tailored to
+        your needs.</p>
       <ul>
-        <li><strong>Personalized Recommendations:</strong> AI analyzes your data to suggest the best insurance plans for your needs.</li>
-        <li><strong>Fraud Detection:</strong> Advanced AI algorithms detect and prevent fraudulent claims, ensuring security and trust.</li>
-        <li><strong>Efficient Claims Processing:</strong> AI speeds up claims processing by automating verification and assessment tasks.</li>
+        <li><strong>Personalized Recommendations:</strong> AI analyzes your data to suggest the best insurance plans for
+          your needs.</li>
+        <li><strong>Fraud Detection:</strong> Advanced AI algorithms detect and prevent fraudulent claims, ensuring
+          security and trust.</li>
+        <li><strong>Efficient Claims Processing:</strong> AI speeds up claims processing by automating verification and
+          assessment tasks.</li>
       </ul>
     </section>
     <section class="blockchain-enhanced">
       <h2>Blockchain-Powered Insurance</h2>
-      <p>Our insurance solutions utilize blockchain technology to ensure transparency, security, and integrity in every transaction.</p>
+      <p>Our insurance solutions utilize blockchain technology to ensure transparency, security, and integrity in every
+        transaction.</p>
       <ul>
-        <li><strong>Transparent Transactions:</strong> Blockchain provides an immutable ledger for all insurance transactions, ensuring transparency.</li>
-        <li><strong>Secure Data Storage:</strong> Sensitive information is securely stored and protected using blockchain encryption.</li>
-        <li><strong>Efficient Claims Management:</strong> Smart contracts automate and streamline claims processing, reducing delays and errors.</li>
+        <li><strong>Transparent Transactions:</strong> Blockchain provides an immutable ledger for all insurance
+          transactions, ensuring transparency.</li>
+        <li><strong>Secure Data Storage:</strong> Sensitive information is securely stored and protected using
+          blockchain encryption.</li>
+        <li><strong>Efficient Claims Management:</strong> Smart contracts automate and streamline claims processing,
+          reducing delays and errors.</li>
       </ul>
     </section>
   </main>
@@ -119,9 +261,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
-    document.getElementById("lets-go").addEventListener("click", function() {
+    document.getElementById("lets-go").addEventListener("click", function () {
       window.location.href = "login.html";
     });
   </script>
 </body>
+
 </html>

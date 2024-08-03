@@ -3,7 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: grey;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .logo-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul.nav {
+  display: inline;
+}
+
+.nav-item {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+.login {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login h2 {
+  margin-top: 0;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login form label {
+  margin: 10px 0 5px;
+}
+
+.login form input, .login form select {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login form button:hover {
+  background-color: #0056b3;
+}
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-login p {
+  margin: 0;
+}
+
+
+.social-logo {
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link, .forgot-password-link {
+  color: red;
+  text-decoration: underline;
+}
+
+.help-prompt {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.help-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+.remember-me {
+  margin-bottom: 10px;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#singpass-login {
+      padding: 10px;
+      background-color: purple; 
+      color: #333; /* Change to your desired text color */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    #singpass-login:hover {
+      background-color: violet; /* Darker shade for hover effect */
+    }
+  </style>
   <title>Login Page</title>
 </head>
 <body>
@@ -56,6 +228,23 @@
       </div>
       <p class="signup-prompt">Don't have an account? <a href="create.html" class="signup-link">Create Account</a></p>
       <p class="help-prompt"><a href="#" class="help-link">Need help?</a></p>
+      <div class="singpass-login">
+        <p>Or login with SingPass:</p>
+        <button id="singpass-login" class="singpass-button">Login with SingPass</button>
+        <div id="singpass-qr" class="singpass-qr" style="display: none;">
+          <img src="singpass.png" alt="SingPass QR Code">
+          <p>Scan the QR code with your SingPass app</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="twofa" id="twofa-section" style="display: none;">
+      <h2>Enter 2FA Code</h2>
+      <form id="twofa-form">
+        <label for="twofa-code">2FA Code:</label>
+        <input type="text" id="twofa-code" name="twofa-code" required>
+        <button type="submit" id="verify-code" aria-label="Verify 2FA Code">Verify Code</button>
+      </form>
     </section>
   </main>
   <script>
@@ -63,6 +252,18 @@
       event.preventDefault(); 
       window.location.href = "service.html";
     });
+  
+    document.getElementById("singpass-login").addEventListener("click", function() {
+      window.location.href = "singpass.html";
+    });
+  
+    document.getElementById("twofa-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Simulate 2FA code verification
+      alert("2FA Code Verified!");
+      window.location.href = "service.html";
+    });
   </script>
+  
 </body>
 </html>
