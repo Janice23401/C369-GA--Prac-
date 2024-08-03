@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Need Help - AFin Secure</title>
+    <title>Start Chat - AFin Secure</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            box-sizing: border-box;
         }
 
         header {
@@ -76,24 +74,7 @@
 
         h1 {
             text-align: center;
-        }
-
-        .faq {
-            margin-top: 2rem;
-        }
-
-        .faq h2 {
             color: grey;
-        }
-
-        .faq dt {
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-
-        .faq dd {
-            margin-left: 1rem;
-            margin-bottom: 1rem;
         }
 
         form {
@@ -133,14 +114,13 @@
             background-color: grey;
             color: white;
             text-align: center;
-            padding: 0rem;
+            padding: 1rem;
             position: fixed;
             width: 100%;
             bottom: 0;
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="logo">
@@ -149,63 +129,43 @@
         </div>
         <nav>
             <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="create.html">Create Account</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-              </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+                <li class="nav-item"><a class="nav-link" href="digital_wallet.html">Online Payment</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="need_help.html">Need Help</a></li>
+                <li class="nav-item"><a class="nav-link active" href="start_chat.html">Start Chat</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
             </ul>
-          </nav>
+        </nav>
     </header>
     <main>
-        <h1>Need Help?</h1>
-        <form id="help-form">
+        <h1>Start Chat</h1>
+        <form id="chat-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="issue">Issue:</label>
-            <textarea id="issue" name="issue" rows="4" required></textarea>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Start Chat</button>
         </form>
-
-        <section class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <dl>
-                <dt>How do I top up my digital wallet?</dt>
-                <dd>Click on the 'Top Up' button in your digital wallet page and follow the instructions to add funds
-                    using your credit card.</dd>
-
-                <dt>How do I make a payment?</dt>
-                <dd>Navigate to the payment section, enter the amount and other required details, and click on 'Make
-                    Payment'.</dd>
-
-                <dt>What should I do if my payment fails?</dt>
-                <dd>If your payment fails, please check your card details and ensure you have sufficient funds. If the
-                    issue persists, contact our support team through the 'Need Help' form.</dd>
-            </dl>
-        </section>
     </main>
     <footer>
         <p>&copy; 2024 AFin Secure. All rights reserved.</p>
     </footer>
     <script>
-        document.getElementById("help-form").addEventListener("submit", function (event) {
+        document.getElementById("chat-form").addEventListener("submit", function(event) {
             event.preventDefault();
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
-            const issue = document.getElementById("issue").value;
+            const message = document.getElementById("message").value;
 
-            alert(`Thank you, ${name}. Your issue has been submitted. We will contact you at ${email} shortly.`);
+            alert(`Thank you, ${name}. Your chat request has been submitted. We will contact you at ${email} shortly.`);
         });
     </script>
 </body>
-
 </html>
