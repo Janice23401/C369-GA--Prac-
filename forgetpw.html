@@ -1,177 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgot Password - AFin Secure</title>
-    <style>
-        
-        body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  box-sizing: border-box;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password - AFin Secure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      box-sizing: border-box;
+    }
 
-header {
-  background-color: grey;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-}
+    header {
+      background-color: grey;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
 
-header .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-header .logo-img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
+    header .logo-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
 
-header h1 {
-  margin: 0;
-}
+    header h1 {
+      margin: 0;
+    }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
 
-nav ul.nav {
-  display: inline;
-}
+    nav ul.nav {
+      display: inline;
+    }
 
-.nav-item {
-  display: inline;
-  margin-right: 1rem;
-}
+    .nav-item {
+      display: inline;
+      margin-right: 1rem;
+    }
 
-.nav-link {
-  color: white;
-  text-decoration: none;
-}
+    .nav-link {
+      color: white;
+      text-decoration: none;
+    }
 
-.nav-link.active {
-  font-weight: bold;
-}
+    .nav-link.active {
+      font-weight: bold;
+    }
 
-nav ul li a:hover {
-  text-decoration: underline;
-}
-  
-  .forgot-password-container {
-    background-color: #fff;
-    padding: 80px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300xpx;
-    align-content: center;
-  }
-  
-  .forgot-password-container h2 {
-    margin-top: 0;
-  }
-  
-  .forgot-password-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .forgot-password-container form label {
-    margin-bottom: 5px;
-  }
-  
-  .forgot-password-container form input {
-    margin-bottom: 15px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .forgot-password-container form button {
-    padding: 10px;
-    border: none;
-    background-color: purple;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .forgot-password-container form button:hover {
-    background-color: violet;
-  }
-  
-  #message {
-    margin-top: 15px;
-    color: green;
-  }
-  
-  
-  footer {
-    background-color: grey;
-    color: white;
-    text-align: center;
-    padding: 0rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-    </style>
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .forgot-password-container {
+      background-color: #fff;
+      padding: 80px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300xpx;
+      align-content: center;
+    }
+
+    .forgot-password-container h2 {
+      margin-top: 0;
+    }
+
+    .forgot-password-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .forgot-password-container form label {
+      margin-bottom: 5px;
+    }
+
+    .forgot-password-container form input {
+      margin-bottom: 15px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .forgot-password-container form button {
+      padding: 10px;
+      border: none;
+      background-color: purple;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .forgot-password-container form button:hover {
+      background-color: violet;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: green;
+    }
+
+
+    footer {
+      background-color: grey;
+      color: white;
+      text-align: center;
+      padding: 0rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-      <div class="logo">
-        <img src="logo.png" alt="AFin Secure Logo" class="logo-img">
-        <h1>AFin Secure</h1>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="AFin Secure Logo" class="logo-img">
+      <h1>AFin Secure</h1>
     </div>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
-          <li class="nav-item"><a class="nav-link" href="digital_wallet.html">Online Payment</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-        <div class="forgot-password-container">
-            <h2>Forgot Password</h2>
-            <form id="forgot-password-form">
-                <label for="email">Email:</label>
-                <input type="email" id="email" required><br>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="verification-message" style="display: none;">
-                <p>A verification code has been sent to your email. Please enter it below:</p>
-                <form id="verification-form">
-                    <label for="verification-code">Verification Code:</label>
-                    <input type="text" id="verification-code" required><br>
-                    <button type="submit">Verify</button>
-                </form>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
-    </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-    const forgotPasswordForm = document.getElementById("forgot-password-form");
-    const verificationMessage = document.getElementById("verification-message");
-    const verificationForm = document.getElementById("verification-form");
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+        <li class="nav-item"><a class="nav-link" href="digital_wallet.html">Online Payment</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="forgot-password-container">
+      <h2>Forgot Password</h2>
+      <form id="forgot-password-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="verification-message" style="display: none;">
+        <p>A verification code has been sent to your email. Please enter it below:</p>
+        <form id="verification-form">
+          <label for="verification-code">Verification Code:</label>
+          <input type="text" id="verification-code" required><br>
+          <button type="submit">Verify</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 AFIN SECURE. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const forgotPasswordForm = document.getElementById("forgot-password-form");
+      const verificationMessage = document.getElementById("verification-message");
+      const verificationForm = document.getElementById("verification-form");
 
-    let verificationCodeSent;
+      let verificationCodeSent;
 
-    forgotPasswordForm.addEventListener("submit", (event) => {
+      forgotPasswordForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const email = document.getElementById("email").value;
 
@@ -180,22 +181,23 @@ nav ul li a:hover {
 
         forgotPasswordForm.style.display = "none";
         verificationMessage.style.display = "block";
-    });
+      });
 
-    verificationForm.addEventListener("submit", (event) => {
+      verificationForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const verificationCodeEntered = document.getElementById("verification-code").value;
 
-        
-        if (verificationCodeEntered === verificationCodeSent) {
-            alert("Verification successful!");
-            window.location.href= "service.html"
-        } else {
-            alert("Invalid verification code. Please try again.");
-        }
-    });
-});
 
-    </script>
+        if (verificationCodeEntered === verificationCodeSent) {
+          alert("Verification successful!");
+          window.location.href = "service.html"
+        } else {
+          alert("Invalid verification code. Please try again.");
+        }
+      });
+    });
+
+  </script>
 </body>
+
 </html>

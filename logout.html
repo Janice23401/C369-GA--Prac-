@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +42,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>AFin Secure</h1>
@@ -52,15 +54,16 @@
     </section>
   </main>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  
-      localStorage.removeItem('userToken'); 
-      sessionStorage.removeItem('userSession'); 
+    document.addEventListener('DOMContentLoaded', function () {
 
-      setTimeout(function() {
-        window.location.href = 'login.html'; 
-      }, 2000); 
+      localStorage.removeItem('userToken');
+      sessionStorage.removeItem('userSession');
+
+      setTimeout(function () {
+        window.location.href = 'login.html';
+      }, 2000);
     });
   </script>
 </body>
+
 </html>

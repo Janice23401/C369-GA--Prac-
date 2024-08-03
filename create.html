@@ -1,12 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Account - AFin Secure</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: grey;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header .logo-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    nav ul.nav {
+      display: inline;
+    }
+
+    .nav-item {
+      display: inline;
+      margin-right: 1rem;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    button {
+      background-color: purple;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: violet;
+    }
+
+    .create-account {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .create-account h2,
+    .login h2,
+    .welcome h2 {
+      margin-top: 0;
+    }
+
+    .create-account form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .create-account form label {
+      margin: 10px 0 5px;
+    }
+
+    .create-account form input,
+    .create-account form select {
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .create-account form button {
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .create-account form button:hover {
+      background-color: #0056b3;
+    }
+
+    .social-logo {
+      height: 30px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+
+    .help-prompt {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .help-link {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .help-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -30,34 +178,34 @@
   <main>
     <section class="create-account">
       <h2>Create An Account! It's Free!</h2>
-      <form action="/signup" method="post">
+      <form id="create-account-form">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-        
+
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-        
+
         <label for="confirm-password">Confirm Password:</label>
         <input type="password" id="confirm-password" name="confirm-password" required>
-        
+
         <label for="security-question">Security Question:</label>
         <select id="security-question" name="security-question" required>
           <option value="pet-name">What is the name of your first pet?</option>
           <option value="mother-maiden-name">What is your mother's maiden name?</option>
           <option value="first-school">What was the name of your first school?</option>
         </select>
-        
+
         <label for="security-answer">Answer:</label>
         <input type="text" id="security-answer" name="security-answer" required>
-        
-        <button id="create">Create Account</button>
+
+        <button type="submit" id="create">Create Account</button>
       </form>
       <div class="social-signup">
         <p>Or sign up with:</p>
         <a href="https://mail.google.com/" target="_blank">
           <img src="img1.jpg" alt="Google" class="social-logo" id="google-signup">
         </a>
-        <a href="https://www.facebook.com/login/" target= "_blank">
+        <a href="https://www.facebook.com/login/" target="_blank">
           <img src="img2.png" alt="Facebook" class="social-logo" id="facebook-signup">
       </div>
       <p class="login-prompt">Have an account? <a href="login.html" class="login-link">Login!</a></p>
@@ -65,9 +213,11 @@
     </section>
   </main>
   <script>
-    document.getElementById("create").addEventListener("click", function() {
-      window.location.href = "service.html";
+    document.getElementById("create-account-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      window.location.href = "login.html";
     });
   </script>
 </body>
+
 </html>
