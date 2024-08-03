@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need Help - AFin Secure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: grey;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .logo-img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul.nav {
+            display: inline;
+        }
+
+        .nav-item {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: #fff;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .faq {
+            margin-top: 2rem;
+        }
+
+        .faq h2 {
+            color: grey;
+        }
+
+        .faq dt {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .faq dd {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label,
+        form input,
+        form textarea,
+        form button {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        form input,
+        form textarea {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 0.5rem;
+            background-color: purple;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        form button:hover {
+            background-color: violet;
+        }
+
+        footer {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="AFin Secure Logo" class="logo-img">
+            <h1>AFin Secure</h1>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+                <li class="nav-item"><a class="nav-link" href="digital_wallet.html">Online Payment</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="need_help.html">Need Help</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Need Help?</h1>
+        <form id="help-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="issue">Issue:</label>
+            <textarea id="issue" name="issue" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <dl>
+                <dt>How do I top up my digital wallet?</dt>
+                <dd>Click on the 'Top Up' button in your digital wallet page and follow the instructions to add funds
+                    using your credit card.</dd>
+
+                <dt>How do I make a payment?</dt>
+                <dd>Navigate to the payment section, enter the amount and other required details, and click on 'Make
+                    Payment'.</dd>
+
+                <dt>What should I do if my payment fails?</dt>
+                <dd>If your payment fails, please check your card details and ensure you have sufficient funds. If the
+                    issue persists, contact our support team through the 'Need Help' form.</dd>
+            </dl>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 AFin Secure. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById("help-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const issue = document.getElementById("issue").value;
+
+            alert(`Thank you, ${name}. Your issue has been submitted. We will contact you at ${email} shortly.`);
+        });
+    </script>
+</body>
+
+</html>
