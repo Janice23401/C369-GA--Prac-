@@ -176,8 +176,8 @@
         event.preventDefault();
         const email = document.getElementById("email").value;
 
-        verificationCodeSent = Math.floor(100000 + Math.random() * 900000).toString(); // Generate a 6-digit code
-        alert(`Verification code sent to ${email}. Code: ${verificationCodeSent}`); // Simulate sending email
+        verificationCodeSent = Math.floor(100000 + Math.random() * 900000).toString(); 
+        alert(`Verification code sent to ${email}. Code: ${verificationCodeSent}`); 
 
         forgotPasswordForm.style.display = "none";
         verificationMessage.style.display = "block";

@@ -169,7 +169,6 @@
       padding: 10px;
       background-color: purple;
       color: #333;
-      /* Change to your desired text color */
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -235,6 +234,7 @@
         <a href="https://www.facebook.com/login/" target="_blank">
           <img src="img2.png" alt="Facebook" class="social-logo" id="facebook-signup">
       </div>
+    </a>
       <p class="signup-prompt">Don't have an account? <a href="create.html" class="signup-link">Create Account</a></p>
       <p class="help-prompt"><a href="help.html" class="help-link">Need help?</a></p>
       <div class="singpass-login">
@@ -268,7 +268,6 @@
 
     document.getElementById("twofa-form").addEventListener("submit", function (event) {
       event.preventDefault();
-      // Simulate 2FA code verification
       alert("2FA Code Verified!");
       window.location.href = "service.html";
     });
